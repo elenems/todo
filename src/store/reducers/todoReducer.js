@@ -6,8 +6,7 @@ const initState = {
 
 const todoReducer = (state = initState, action) => {
   if (action.type === A.ADD_TODO) {
-    const newTodo = { title: action.paylaod, id: Math.random() };
-    console.log(newTodo)
+    const newTodo = { title: action.payload, id: Math.random() };
     return {
       ...state,
       todos: [...state.todos, newTodo]

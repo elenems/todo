@@ -1,7 +1,7 @@
 import {all, takeLatest, put} from "redux-saga/effects";
 
 function* addTodo(){
- yield put('ADD_TODO')
+//  yield put('ADD_TODO')
 }
 
 function* watchAddTodo(){
