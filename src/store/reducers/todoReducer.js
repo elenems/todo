@@ -1,7 +1,8 @@
 import * as A from "../actions/actionTypes";
 
+const todos = localStorage.getItem('todos') === null ? [] : JSON.parse(localStorage.getItem('todos'));
 const initState = {
-  todos: []
+  todos
 };
 
 const todoReducer = (state = initState, action) => {
@@ -9,9 +10,18 @@ const todoReducer = (state = initState, action) => {
     const newTodo = { title: action.payload, id: Math.random() };
     return {
       ...state,
-      todos: [...state.todos, newTodo]
+      todos: [newTodo, ...state.todos]
     };
   }
+
+  if(action.type === A.REMOVE_TODO){
+    const id = action.payload;
+    return {
+      ...state,
+      todos: state.todos.filter(todo=>todo.id !== id)
+    }
+  }
+
   return state;
 };
 
