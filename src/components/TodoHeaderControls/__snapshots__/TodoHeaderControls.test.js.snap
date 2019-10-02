@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoHeaderControls Matches snapshot 1`] = `
+"<div className=\\"controls\\">
+  <Styled(MuiBox) display=\\"flex\\" alignItems=\\"baseline\\" justifyContent=\\"space-between\\">
+    <TodoInput value=\\"\\" handleChange={[Function]} />
+    <AddTodoButton handleClick={[Function]} />
+  </Styled(MuiBox)>
+</div>"
+`;

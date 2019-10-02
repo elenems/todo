@@ -9,7 +9,6 @@ class TodoList extends Component {
     const todos = this.props.todos;
     return (
       <Box style={{ marginTop: "20px" }}>
-      
         {todos.length ? (
           todos.map(todo => {
             return <TodoItem key={todo.id} todo={todo} />;

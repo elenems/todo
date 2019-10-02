@@ -4,7 +4,7 @@ import AddTodoButton from "./AddTodoButton";
 import { connect } from "react-redux";
 import { addTodo, setError } from "../../store/actions/todoActions";
 import Box from "@material-ui/core/Box";
-import AlertCard from '../../shared/AlertCard';
+import AlertCard from "../../shared/AlertCard";
 class TodoHeaderControls extends Component {
   state = {
     title: ""
@@ -23,7 +23,17 @@ class TodoHeaderControls extends Component {
         title: ""
       });
     } else {
+      const elements = document.getElementsByClassName("card");
       this.props.setError("New TODO can't be empty!");
+      setTimeout(() => {
+        for (let elem of elements) {
+          elem.className = elem.className.replace(/reveal/, "hide");
+        }
+        setTimeout(() => {
+          this.props.setError("");
+        }, 400);
+      }, 2500);
+      
     }
   };
 
@@ -31,9 +41,7 @@ class TodoHeaderControls extends Component {
     const { title } = this.state;
     return (
       <div className="controls">
-        {this.props.error ? (
-          <AlertCard error={this.props.error}/>
-        ) : null}
+        {this.props.error ? <AlertCard error={this.props.error} /> : null}
         <Box
           display="flex"
           alignItems="baseline"
@@ -60,6 +68,8 @@ const mapStateToProps = state => {
     error: state.todo.error
   };
 };
+
+export const TodoHeaderControlsTest = TodoHeaderControls;
 
 export default connect(
   mapStateToProps,

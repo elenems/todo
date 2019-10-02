@@ -6,10 +6,15 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { setError, editTodo, setMessage } from "../../store/actions/todoActions";
+import {
+  setError,
+  editTodo,
+  setMessage
+} from "../../store/actions/todoActions";
 import AlertCard from "../../shared/AlertCard";
 import { MdChevronLeft } from "react-icons/md";
-import SuccessCard from '../../shared/SuccessCard';
+import SuccessCard from "../../shared/SuccessCard";
+import { element } from "prop-types";
 
 const useStyles = makeStyles({
   root: {
@@ -30,10 +35,17 @@ function EditTodo(props) {
         title: todoText,
         id: props.match.params.id
       });
-      props.setMessage('Successfuly updated')
-      setTimeout(()=>{
-        props.setMessage('');
-      },3000)
+      props.setMessage("Successfuly updated");
+      const elements = document.getElementsByClassName("card");
+      setTimeout(() => {
+        setTimeout(() => {
+          props.setMessage("");
+        }, 400);
+
+        for (let elem of elements) {
+          elem.className = elem.className.replace(/reveal/, "hide");
+        }
+      }, 2500);
     } else {
       props.setError("Todo must have text");
     }
@@ -50,14 +62,19 @@ function EditTodo(props) {
   };
 
   const moveHome = () => {
-    props.history.push('/');
-  }
+    props.history.push("/");
+  };
 
   return (
     <div>
       {props.error ? <AlertCard error={props.error} /> : null}
-      {props.message ? <SuccessCard message={props.message}/> : null}
-      <Box style={{marginBottom:'40px'}} display="flex" alignItems="flex-end" justifyContent="space-between">
+      {props.message ? <SuccessCard message={props.message} /> : null}
+      <Box
+        style={{ marginBottom: "40px" }}
+        display="flex"
+        alignItems="flex-end"
+        justifyContent="space-between"
+      >
         <TextField
           classes={{ root: classes.root }}
           value={todoText}

@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import * as Actions from "../../../store/actions/todoActions";
 import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
-import {withRouter} from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 const useStyles = makeStyles({
   root: {
     margin: "0px 0px 10px 0px",
@@ -24,12 +24,16 @@ function TodoItem(props) {
 
   const moveToEditTodo = () => {
     const todoID = props.todo.id;
-    props.history.push(`/edit/${todoID}`)
+    props.history.push(`/edit/${todoID}`);
   };
 
-  const removeTodo = () => {
+  const removeTodo = e => {
     const id = todo.id;
-    props.removeTodo(id);
+    const element = e.target.closest(".todo-item");
+    element.className += ' hide';
+    setTimeout(() => {
+      props.removeTodo(id);
+    }, 400);
   };
 
   const toggleTodoStatus = e => {
@@ -45,7 +49,12 @@ function TodoItem(props) {
     : { textDecoration: "none" };
 
   return (
-    <Box display="flex" alignItems="baseline" justifyContent="space-between">
+    <Box
+      className="todo-item reveal"
+      display="flex"
+      alignItems="baseline"
+      justifyContent="space-between"
+    >
       <Typography
         style={textStyle}
         onClick={toggleTodoStatus}
@@ -87,7 +96,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRouter(connect(
-  null,
-  mapDispatchToProps
-)(TodoItem));
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(TodoItem)
+);
