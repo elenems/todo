@@ -18,7 +18,7 @@ class TodoHeaderControls extends Component {
 
   addTodo = () => {
     if (this.state.title.length > 0) {
-      this.props.addTodo(this.state.title);
+      this.props.addTodo({title:this.state.title, id:Math.random()});
       this.setState({
         title: ""
       });

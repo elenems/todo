@@ -29,4 +29,6 @@ const mapStateToProps = state => {
   };
 };
 
+export const TodoListTest = TodoList;
+
 export default connect(mapStateToProps)(TodoList);

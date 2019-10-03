@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Edit todo Matches snapshot 1`] = `
+<div>
+  <Styled(MuiBox)
+    alignItems="flex-end"
+    display="flex"
+    justifyContent="space-between"
+    style={
+      Object {
+        "marginBottom": "40px",
+      }
+    }
+  >
+    <WithStyles(ForwardRef(TextField))
+      classes={
+        Object {
+          "root": "makeStyles-root-1",
+        }
+      }
+      id="title"
+      label="Title"
+      margin="normal"
+      onChange={[Function]}
+      value="Title"
+    />
+    <WithStyles(ForwardRef(Tooltip))
+      placement="right"
+      title="edit"
+    >
+      <WithStyles(ForwardRef(Button))
+        color="primary"
+        onClick={[Function]}
+        variant="contained"
+      >
+        Edit
+      </WithStyles(ForwardRef(Button))>
+    </WithStyles(ForwardRef(Tooltip))>
+  </Styled(MuiBox)>
+  <WithStyles(ForwardRef(Button))
+    color="primary"
+    onClick={[Function]}
+    variant="contained"
+  >
+    <MdChevronLeft
+      fontSize="36px"
+    />
+    Back
+  </WithStyles(ForwardRef(Button))>
+</div>
+`;

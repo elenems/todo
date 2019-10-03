@@ -114,6 +114,8 @@ const mapStateToProps = state => {
   };
 };
 
+export const EditTodoTest  = EditTodo;
+
 export default withRouter(
   connect(
     mapStateToProps,
