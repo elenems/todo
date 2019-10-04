@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem Matches snapshot 1`] = `
+<Styled(MuiBox)
+  alignItems="baseline"
+  className="todo-item reveal"
+  display="flex"
+  justifyContent="space-between"
+>
+  <WithStyles(ForwardRef(Typography))
+    component="p"
+    id="todoStatusToggler"
+    onClick={[Function]}
+    style={
+      Object {
+        "textDecoration": "none",
+      }
+    }
+    variant="h5"
+  >
+    Title
+  </WithStyles(ForwardRef(Typography))>
+  <Styled(MuiBox)>
+    <WithStyles(ForwardRef(Tooltip))
+      title="Edit"
+    >
+      <WithStyles(ForwardRef(IconButton))
+        aria-label="edit"
+        classes={
+          Object {
+            "root": "makeStyles-root-1",
+          }
+        }
+        color="primary"
+        id="editTodoRedirectButton"
+        onClick={[Function]}
+      >
+        <MdEdit />
+      </WithStyles(ForwardRef(IconButton))>
+    </WithStyles(ForwardRef(Tooltip))>
+    <WithStyles(ForwardRef(Tooltip))
+      title="Delete"
+    >
+      <WithStyles(ForwardRef(IconButton))
+        aria-label="delete"
+        classes={
+          Object {
+            "root": "makeStyles-root-1",
+          }
+        }
+        color="secondary"
+        id="removeTodoButton"
+        onClick={[Function]}
+      >
+        <MdRemoveCircleOutline />
+      </WithStyles(ForwardRef(IconButton))>
+    </WithStyles(ForwardRef(Tooltip))>
+  </Styled(MuiBox)>
+</Styled(MuiBox)>
+`;

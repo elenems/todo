@@ -21,8 +21,8 @@ describe("Edit todo", () => {
   });
 
   it("Calls editTodo", () => {
-    const wrapper = shallow(<EditTodoTest {...props} />);
-    console.log(wrapper.instance());
+    // const wrapper = shallow(<EditTodoTest props = {props} />);
+    // console.log(wrapper.prop('todos'));
     // const mock = jest.spyOn(wrapper.instance(), "editTodo");
     // wrapper.instance().editTodo();
     // expect(mock).toHaveBeenCalled();

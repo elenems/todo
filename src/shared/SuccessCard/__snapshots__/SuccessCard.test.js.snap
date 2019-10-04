@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert card Renders 1`] = `
+"<Styled(MuiBox) style={{...}} color=\\"#4caf50\\" display=\\"flex\\" alignItems=\\"center\\" justifyContent=\\"space-between\\" className=\\"reveal card\\">
+  <WithStyles(ForwardRef(Typography)) variant=\\"h6\\" component=\\"p\\" />
+  <div style={{...}}>
+    <MdDone color=\\"#4caf50\\" />
+  </div>
+</Styled(MuiBox)>"
+`;

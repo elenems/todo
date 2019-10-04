@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { MdDone } from "react-icons/md";
-export default function AlertCard(props) {
+export default function SuccessCard(props) {
   return (
     <Box
       style={{

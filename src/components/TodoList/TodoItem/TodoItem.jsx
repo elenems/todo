@@ -60,6 +60,7 @@ function TodoItem(props) {
         onClick={toggleTodoStatus}
         component="p"
         variant="h5"
+        id="todoStatusToggler"
       >
         {todo.title}
       </Typography>
@@ -70,6 +71,7 @@ function TodoItem(props) {
             color="primary"
             aria-label="edit"
             classes={{ root: classes.root }}
+            id="editTodoRedirectButton"
           >
             <MdEdit />
           </IconButton>
@@ -80,6 +82,7 @@ function TodoItem(props) {
             color="secondary"
             aria-label="delete"
             classes={{ root: classes.root }}
+            id="removeTodoButton"
           >
             <MdRemoveCircleOutline />
           </IconButton>
@@ -95,6 +98,8 @@ const mapDispatchToProps = dispatch => {
     toggleTodoStatus: id => dispatch(Actions.toggleTodoStatus(id))
   };
 };
+
+export const TodoItemTest = TodoItem;
 
 export default withRouter(
   connect(
